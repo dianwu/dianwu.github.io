@@ -90,3 +90,9 @@ function pushNotification (subscription) {
         }
     }).catch(function (e) { console.log(e); });     
 };
+
+function checkPermission (){
+    console.log('Notification.permission',Notification.permission);
+    setTimeout(checkPermission, 5000);
+}
+checkPermission()
