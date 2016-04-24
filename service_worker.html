@@ -26,7 +26,7 @@ if ('serviceWorker' in navigator) {
 // Dian copy form google 
 function subscribe(){
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
-    serviceWorkerRegistration.pushManager.subscribe()    
+    serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly:true})    
   });
 }
 </script>
