@@ -24,6 +24,15 @@ self.addEventListener('push', function(event) {
   );    
 });
 
+self.addEventListener('push', function(event) {
+    // cloud team
+    event.waitUntil(self.registration.pushManager.getSubscription().then(
+        function(subscription) {
+            return pushNotification(subscription)
+        }
+    )); 
+}
+
 
 self.addEventListener('notificationclick', function(event) {  
     console.log('On notification click: ', event.notification.tag);  
