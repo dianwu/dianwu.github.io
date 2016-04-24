@@ -8,7 +8,7 @@
     hello world
 </body>
 <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
  console.log('Service Worker is supported');
  navigator.serviceWorker.register('service_worker.js').then(function(reg) {
    console.log(':^)', reg);
@@ -16,6 +16,14 @@
  }).catch(function(err) {
    console.log(':^(', err);
  });
+ 
+ 
+   // ----------------------------------- 
+   // Dian copy form google 
+   // We need the service worker registration to check for a subscription  
+  navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
+    serviceWorkerRegistration.pushManager.subscribe()    
+  });  
 }
 </script>
 </html>
