@@ -8,11 +8,20 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('push', function(event) {
-    event.waitUntil(self.registration.pushManager.getSubscription().then(
-        function(subscription) {
-            return pushNotification(subscription)
-        }
-    ));     
+    console.log('Received a push message', event);
+
+  var title = 'Yay a message.';  
+  var body = 'We have received a push message.';  
+  var icon = '/images/icon-192x192.png';  
+  var tag = 'simple-push-demo-notification-tag';
+
+  event.waitUntil(  
+    self.registration.showNotification(title, {  
+      body: body,  
+      icon: icon,  
+      tag: tag  
+    })  
+  );    
 });
 
 
