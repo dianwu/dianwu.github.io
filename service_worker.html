@@ -28,7 +28,10 @@ function subscribe(){
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
     serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly:true})
     .then(function(subscription) {
-        console.log(subscription);
+        var endpoint = subscription.endpoint;
+        var endpointParts = endpoint.split('/');
+        var registrationId = endpointParts.pop();
+        console.log('registrationId',registrationId);
         // return sendSubscriptionToServer(subscription);  
       }) 
   });
