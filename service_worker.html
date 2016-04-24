@@ -5,6 +5,7 @@
 <link rel="manifest" href="/manifest.json">
 </head>
 <body>
+    <button text="subscribe" onclick="subscribe()" ></button>
     hello world
 </body>
 <script type="text/javascript">
@@ -18,12 +19,15 @@ if ('serviceWorker' in navigator) {
  });
  
  
-   // ----------------------------------- 
-   // Dian copy form google 
-   // We need the service worker registration to check for a subscription  
+     
+}
+
+// ----------------------------------- 
+// Dian copy form google 
+function subscribe(){
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
     serviceWorkerRegistration.pushManager.subscribe()    
-  });  
+  });
 }
 </script>
 </html>
