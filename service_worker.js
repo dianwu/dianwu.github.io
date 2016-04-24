@@ -31,7 +31,7 @@ self.addEventListener('push', function(event) {
             return pushNotification(subscription)
         }
     )); 
-}
+});
 
 
 self.addEventListener('notificationclick', function(event) {  
