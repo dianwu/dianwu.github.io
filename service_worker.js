@@ -66,7 +66,7 @@ function pushNotification (subscription) {
     var data = {
         'receiver_reg_id': subscription.endpoint.toString().replace("https://android.googleapis.com/gcm/send/","")
     };
-    var message_request = new Request('/ajax/get_notification', {
+    var message_request = new Request('/ajax/get_notification.txt', {
         method: 'GET',
         //method: 'POST',
         mode: 'cors',
