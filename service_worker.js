@@ -8,7 +8,7 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('push', function(event) {
-    console.log('Received a push message', event.data);
+    console.log('Received a push message', event);
 
   var title = 'Yay a message.';  
   var body = 'We have received a push message.';  
